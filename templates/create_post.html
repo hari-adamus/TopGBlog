@@ -1,0 +1,75 @@
+
+<style>
+
+.body_textbox{
+    width:1500;
+    height:500;
+    margin-left: 35;
+    font-size: 30;
+    text-overflow: clip;
+    line-break: strict;
+    resize:none;
+    padding-top: 20;
+    padding-bottom: 20;
+    bottom: 10;
+    text-decoration-style: dotted;
+    
+}
+
+
+.title_textbox{
+    margin-left: 280;
+    width: 1000;
+    height: 100;
+    margin-top: 0;
+    font-size: 60;
+
+}
+
+h1{
+    margin-left: 650;
+    font-size: 80;
+    margin-top:20;
+    margin-bottom: 20;
+    color: rgb(22, 37, 61);
+}
+</style>
+
+
+
+<style>
+    .img{
+        float: left;
+        top: 3;
+        padding-top: 2;
+        margin-left: -5;
+        position: absolute;
+        border-radius: 100px;
+    }
+    .container:hover img{
+            transform: scale(1.1);
+            border-radius: 150px;
+        }
+</style>
+
+<div class="container">
+    <a href="/" ><img src=
+        "https://youthscape.ams3.cdn.digitaloceanspaces.com/images/16723620780107.remini-enhanced.jpg" alt="home"
+        class="img" 
+        style="width:150;height: 100;">
+
+    </a>
+</div>
+
+<h1>Title:</h1>
+
+
+
+<form method="POST" action="added" >
+    {% csrf_token %}
+    <input type="text" class="title_textbox" maxlength="35" name="title_textbox">
+    <h1>Body:</h1>
+    <textarea class="body_textbox" maxlength="20000" name="body_textbox"></textarea>
+    
+    <button style="margin-left: 650; margin-top: 20; width: 200; height: 30;"> Sumit Blog Entry</button>
+</form>

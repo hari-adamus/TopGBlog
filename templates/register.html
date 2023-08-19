@@ -1,0 +1,77 @@
+<h1>
+    REGISTER HERE:
+</h1>
+
+<style>
+    h5{
+        color:red;
+        font-size: medium;
+    }
+</style>
+
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+
+
+<form method="POST" action="register">
+    {% csrf_token %}
+    <p>Name:</p>
+    <input type="name" name="name"/>
+    
+
+    <p>Gender:</p>
+    <input type="gender" name="gender"/>
+
+    <p>Email:</p>
+    <input type="email" name="email"/>
+
+    <p>Password:</p>
+    <input type="password" name="password"/>
+
+    <p>Repeat Password:</p>
+    <input type="password" name="password2"/><br>
+
+    <input type ="submit"/>
+
+</form>
+
+
+<style>
+    .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+
+    .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #4CAF50;
+}
+
+    .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+}
+
+    .button1:active{
+        background-color: #213322;
+    }
+</style>
+
+<form method="POST" action="login">
+    {% csrf_token %}
+    <button class="button button1" >
+    Already have an account? <br> Log In Here.</button>
+
+</form>
